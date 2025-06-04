@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.java.crm.model.Complaint" table="Complaint">
+        
+        <!-- Primary Key -->
+        <id name="ComplaintId" column="ComplaintID" type="string">
+            <generator class="assigned"/>
+        </id>
+
+        <!-- Other Properties -->
+        <property name="ComplaintType" column="ComplaintType" type="string"/>
+        <property name="cdescription" column="Cdescription" type="string"/>
+        <property name="complaintDate" column="ComplaintDate" type="date" insert="false" />
+
+        <!-- Enum mapping for Severity -->
+        <property name="severity" column="SEVERITY">
+			<type name="org.hibernate.type.EnumType">
+            <param name="enumClass">com.java.enums.Severity</param>
+				<param name="useNamed">true</param>
+			</type>
+		</property>
+
+        <!-- Enum mapping for Status -->
+        <property name="status" column="Status">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.java.enums.Status</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List Cars by Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            width: 400px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px #ccc;
+            text-align: center;
+        }
+
+        select, input[type="submit"] {
+            padding: 10px;
+            width: 100%;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>List Cars by Status</h2>
+        <form action="listCarsByStatusServlet" method="post">
+            <label for="status">Select Status:</label><br>
+            <select name="status" required>
+                <option value="AVAILABLE">AVAILABLE</option>
+                <option value="NOTAVAILABLE">NOTAVAILABLE</option>
+            </select><br>
+            <input type="submit" value="List Cars">
+        </form>
+    </div>
+</body>
+</html>
+

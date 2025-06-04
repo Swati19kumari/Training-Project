@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.java.jsf.model.MedicationHistory" table="MedicationHistory">
+    <id name="medId" type="java.lang.String">
+        <column name="medId" />
+    </id>
+
+    <many-to-one name="patient" class="com.java.jsf.model.Patient">
+        <column name="patientId" not-null="true" />
+    </many-to-one>
+
+    <property name="medicines" type="java.lang.String">
+        <column name="medicines" />
+    </property>
+
+    <property name="tests" type="java.lang.String">
+        <column name="tests" />
+    </property>
+
+</class>
+
+	<query name="showMedicHistory">
+		From MedicationHistory
+	</query>	
+</hibernate-mapping>

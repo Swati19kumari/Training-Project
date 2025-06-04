@@ -1,0 +1,15 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.java.crm.model.Resolve" table="Resolve">
+    <id name="ResolveId" column="ResolveID" type="int">
+      <generator class="increment"/>
+    </id>
+    <property name="ComplaintID" column="ComplaintID"/>
+    <property name="ComplaintDate" column="ComplaintDate"/>
+    <property name="resolveDate" column="ResolveDate" type="date" insert="false" />
+    <property name="ResolvedBy" column="ResolvedBy"/>
+    <property name="Comments" column="Comments"/>
+   
+  </class>
+</hibernate-mapping>
